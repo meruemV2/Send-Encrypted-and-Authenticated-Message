@@ -1,0 +1,35 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+</head>
+<body data-gr-c-s-loaded="true" style="margin: 0px;">
+    {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <ul>
+               {% for message in messages %}
+               <li>{{ message }}</li>
+               {% endfor %}
+            </ul>
+         {% endif %}
+    {% endwith %}
+
+{% if session['logged_in'] and session['admin'] %}
+
+      <form action="{{ url_for('addrec') }}"  method="POST">
+         <h3>Agent Information</h3>
+         Agent Name<br>
+         <input type="text" name="AgentName" data-nlok-ref-guid="c1ec46f6-a2fd-4020-bb23-abe9851e6544"><div id="norton-idsafe-field-styling-divId" style="height:15.515151977539062px;max-width:15.515151977539062px;vertical-align:top; position:absolute; top:60.96117687225342px;left:149.00097705471902px;cursor:pointer;resize: both;z-index:2147483646;"><img id="norton-idsafe-field-logo-imgId" src="chrome-extension://admmjipmmciaobhojoghlmleefbicajg/content/images/ic-field-logo.svg" style="height:15.515151977539062px; max-width:15.515151977539062px;"></div><br>
+
+         Agent Alias<br>
+         <input type="text" name="AgentAlias" data-nlok-ref-guid="c1ec46f6-a2fd-4020-bb23-abe9851e6544"><div id="norton-idsafe-field-styling-divId" style="height:15.515151977539062px;max-width:15.515151977539062px;vertical-align:top; position:absolute; top:60.96117687225342px;left:149.00097705471902px;cursor:pointer;resize: both;z-index:2147483646;"><img id="norton-idsafe-field-logo-imgId" src="chrome-extension://admmjipmmciaobhojoghlmleefbicajg/content/images/ic-field-logo.svg" style="height:15.515151977539062px; max-width:15.515151977539062px;"></div><br>
+
+         Agent Security Level<br>
+         <input type="text" name="AgentSecurityLevel"><br>
+
+         Login Password<br>
+         <input type="password" name="LoginPassword"><br>
+         <input type="submit" value="submit" data-nlok-ref-guid="d0b67cf5-d0c9-4079-9924-376b39eaa947"><br>
+      </form>
+
+
+{% endif %}
+</body></html>

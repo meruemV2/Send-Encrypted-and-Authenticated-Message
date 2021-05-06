@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+</head>
+<body data-gr-c-s-loaded="true" style="margin: 0px;">
+    {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <ul>
+               {% for message in messages %}
+               <li>{{ message }}</li>
+               {% endfor %}
+            </ul>
+         {% endif %}
+    {% endwith %}
+
+{% if session['admin'] or session['admin2'] and session['logged_in'] %}
+
+      <table border="1">
+         <thead>
+           <tr><td>Agent Name</td>
+            <td>Agent Alias</td>
+            <td>Agent Security Level</td>
+            <td>Login Password</td>
+         </tr></thead>
+          <tbody>
+         {% for row in rows.itertuples() %}
+          <tr>
+               <td>{{row[1]}}</td>
+               <td>{{row[2]}}</td>
+               <td> {{row[3]}}</td>
+              <td> {{row[4]}}</td>
+            </tr>
+      {% endfor %}
+          </tbody>
+      </table>
+
+      <a href="/">Go back to home page</a>
+{% endif %}
+
+</body></html>
