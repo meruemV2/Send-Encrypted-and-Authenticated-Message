@@ -1,0 +1,2 @@
+# Send-Encrypted-and-Authenticated-Message
+A small scale real-world application that incorporates the principles of secure computing including cryptography, network security, and data protection using third-party Python libraries. Applies Python towards several contemporary programming requirements and techniques involving secure, distributed, and parallel computing to Send Authenticated Message to Boss using HMAC with Encryption page.
